@@ -1,0 +1,82 @@
+body{
+    background-color: rgb(54, 51, 60);
+    margin: 0px;
+}
+.piedPage{
+    text-align: center;
+    background-color:#007bff;
+}
+.piedPage{
+    font-size: 20px;
+    margin-top: 2%;
+    margin-bottom: 0px;
+}
+.corps{
+    min-height: 81vh; 
+}
+.cAuth{
+    min-height: 62.2vh; 
+}
+.cListe{
+    min-height: 72.2vh; 
+}
+.bienv{
+    min-height: 52.2vh;
+    font-style: italic;
+    margin-top: 20%;
+    font-weight: bolder;
+    color: white;
+}
+.espace{
+    margin-top: 2%;
+}
+.MonForm{
+    margin-top: 14%;
+}
+.bor{
+    border: 2px solid rgba(0, 0, 0, 0.185);
+    padding-bottom: 2%;
+    padding-top: 1%;
+    background-color: #d0c9d6;
+}
+.cpr{
+    margin: 0px;
+}
+tr{
+    background-color: #d0c9d6;
+}
+.tab{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+.Montab{
+    margin-bottom: 1%;
+}
+.blocAcc{
+    color: red;
+}
+.liste{
+    margin-top: 2.5%;
+}
+.tabliste{
+    margin-top: 8%;
+}
+.mb5{
+    margin-bottom: 2.65%;
+}
+.rouge{
+    background-color: red !important;
+}
+.rougMoins{
+    background-color: rgba(255, 0, 0, 0.5) !important;
+}
+.gras{
+    font-weight: bolder;
+    background-color: rgba(50, 114, 117, 0.65);
+}
+.ecriBlanc{
+    color: white !important;
+}
+tr:hover{
+    background-color: #d0c9d6af !important;
+}
