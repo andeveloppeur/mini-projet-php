@@ -37,7 +37,7 @@
                             <div class="col-md-2"></div>
                             <input class="form-control col-md-8 espace '; if(isset($_POST["valider"]) && $seuilQuantite<0){echo'rougMoins';} echo'" type="number" id="quantite" name="quantite"';
                             if($seuilQuantite<0 && $seuilQuantite!=""){echo' placeholder="Impossible car '.$seuilQuantite.' est inférieur à 0"';} 
-                            elseif($seuilQuantite>=0 && isset($_POST["valider"]) && $seuilQuantite!=""){echo' value="'.$seuilQuantite.'"';} 
+                            elseif($seuilQuantite>=0 && isset($_POST["valider"]) && $seuilQuantite!=""){echo' placeholder="Quantité supérieur ou égal à :" value="'.$seuilQuantite.'"';} 
                             elseif($seuilQuantite==""){echo' placeholder="Quantité supérieur ou égal à :" value=""';}echo'>';//lors du chargement de la page
                     echo'</div>';
 
@@ -46,7 +46,7 @@
                             <div class="col-md-2"></div><input class="form-control col-md-8 espace ';if(isset($_POST["valider"]) && $seuilPrixMin<0 && $seuilPrixMin!="" || isset($_POST["valider"]) && $_POST["prixMax"]>=0 && $_POST["prixMax"]!=0 && $seuilPrixMin==""){echo'rougMoins';} echo'" type="number" id="prixMin" name="prixMin"';
                             if($seuilPrixMin<0 && $seuilPrixMin!=""){echo' placeholder="Impossible car '.$seuilPrixMin.' est inférieur à 0"';}
                             elseif($_POST["prixMax"]>=0 && $_POST["prixMax"]!=0 && $seuilPrixMin==""){echo' placeholder="Remplir la borne supérieur "';}
-                            elseif($seuilPrixMin>=0 && isset($_POST["valider"]) && $seuilPrixMin!=""){echo' value="'.$seuilPrixMin.'"';}
+                            elseif($seuilPrixMin>=0 && isset($_POST["valider"]) && $seuilPrixMin!=""){echo' placeholder="Prix (Bonre inférieur) :" value="'.$seuilPrixMin.'"';}
                             elseif($seuilPrixMin==""){echo' placeholder="Prix (Bonre inférieur) :" value=""';}echo'>';//lors du chargement de la page
                     echo'</div>';
                     $seuilPrixMax=$_POST["prixMax"];//recuperation du seuil (prixMax)
@@ -55,7 +55,7 @@
                             if($seuilPrixMax<0 && $seuilPrixMax!=""){echo' placeholder="Impossible car '.$seuilPrixMax.' est inférieur à 0"';}
                             elseif($seuilPrixMax<$seuilPrixMin && $seuilPrixMax!=""){echo' placeholder="Impossible car '.$seuilPrixMax.' est inférieur à '.$seuilPrixMin.'"';}
                             elseif($seuilPrixMin>=0 && $seuilPrixMin!=0 && $seuilPrixMax==""){echo' placeholder="Remplir la borne supérieur "';}
-                            elseif($seuilPrixMax>=0 && isset($_POST["valider"])&& $seuilPrixMax!=""){echo' value="'.$seuilPrixMax.'"';}
+                            elseif($seuilPrixMax>=0 && isset($_POST["valider"])&& $seuilPrixMax!=""){echo' placeholder="Prix (Bonre supérieur) :" value="'.$seuilPrixMax.'"';}
                             elseif($seuilPrixMax==""){echo' placeholder="Prix (Bonre supérieur) :" value=""';}echo'>';//lors du chargement de la page
                     echo'</div>';
                 ?>
