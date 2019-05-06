@@ -48,7 +48,7 @@ session_start();
                         }
                         else{
                             header('Location: pages/accueil.php');
-                            $_SESSION["nom"]=$utilisateurs[1][$login];
+                            $_SESSION["nom"]=$utilisateurs[2][$login];
                         }
                     }
                 ?>
