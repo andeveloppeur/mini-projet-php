@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="FR-fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@ session_start();
     <link rel="stylesheet" type="text/css" media="screen" href="css/MonStyle.css">
     <title>Authentification</title>
 </head>
+
 <body>
     <nav class="container nav nav-pills nav-fill">
         <a class="nav-link active nav-item" href="#">Authentification</a>
@@ -30,33 +32,37 @@ session_start();
                 </div>
                 <div class="row">
                     <div class="col-md-3"></div>
-                    <input type="submit" class="form-control col-md-6 espace" value="Connexion">
+                    <input type="submit" class="form-control col-md-6 espace" name="valider" value="Connexion">
                 </div>
                 <?php
-                    $utilisateurs=array( array("Abdou","Baye","Dija"),
-                                         array("Abdou"=>"azerty","Baye"=>"sonatel","Dija"=>"academie"),
-                                         array("Abdou"=>"Abdoulaye Ndoye","Baye"=>"Baye Niass","Dija"=>"Khadijatou Ndiaye"));
-                    $login=$_POST["login"];//recuperation du login 
-                    $mDp=$_POST["MDP"];//recuperation du MDP
-                    if($login!="" && $mDp!=""){
-                        if($utilisateurs[1][$login]!=$mDp){//verification du login et du MDP
-                            echo"
+                $utilisateurs = array(
+                    array("Abdou", "Baye", "Dija"),
+                    array("Abdou" => "azerty", "Baye" => "sonatel", "Dija" => "academie"),
+                    array("Abdou" => "Abdoulaye Ndoye", "Baye" => "Baye Niass", "Dija" => "Khadijatou Ndiaye")
+                );
+                if (isset($_POST["valider"])) {
+                    $login = $_POST["login"]; //recuperation du login 
+                    $mDp = $_POST["MDP"]; //recuperation du MDP
+                    if ($login != "" && $mDp != "") {
+                        if ($utilisateurs[1][$login] != $mDp) { //verification du login et du MDP
+                            echo "
                             <div class='row'>
                             <div class=col-md-3></div>
                             <p class='blocAcc'>Erreur sur le login ou le mot de passe !!</p>
                             </div>";
-                        }
-                        else{
+                        } else {
                             header('Location: pages/accueil.php');
-                            $_SESSION["nom"]=$utilisateurs[2][$login];
+                            $_SESSION["nom"] = $utilisateurs[2][$login];
                         }
                     }
+                }
                 ?>
             </div>
         </form>
     </section>
     <?php
-        include("pages/piedDePage.php");
+    include("pages/piedDePage.php");
     ?>
 </body>
+
 </html>
